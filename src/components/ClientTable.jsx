@@ -1,12 +1,34 @@
-import React from 'react'
-import { CLIENTS, formatCurrency } from '../data/mockData'
+import React, { useState } from 'react'
+import { CLIENTS, CONTRACT_TIERS, formatCurrency } from '../data/mockData'
 
 export default function ClientTable() {
+  const [selectedTier, setSelectedTier] = useState('All')
+
+  const filteredClients = selectedTier === 'All'
+    ? CLIENTS
+    : CLIENTS.filter(client => client.tier === selectedTier)
+
   return (
     <div className="card">
       <div className="card-header">
         <h2>Client Overview</h2>
-        <span className="badge">{CLIENTS.length} clients</span>
+        <div className="card-header-actions">
+          <div className="dropdown-filter">
+            <label htmlFor="tier-filter" className="dropdown-filter-label">Tier:</label>
+            <select
+              id="tier-filter"
+              className="dropdown-filter-select"
+              value={selectedTier}
+              onChange={e => setSelectedTier(e.target.value)}
+            >
+              <option value="All">All Tiers</option>
+              {CONTRACT_TIERS.map(tier => (
+                <option key={tier} value={tier}>{tier}</option>
+              ))}
+            </select>
+          </div>
+          <span className="badge">{filteredClients.length} clients</span>
+        </div>
       </div>
       <table>
         <thead>
@@ -20,7 +42,7 @@ export default function ClientTable() {
           </tr>
         </thead>
         <tbody>
-          {CLIENTS.map(client => (
+          {filteredClients.map(client => (
             <tr key={client.id}>
               <td className="client-name">{client.name}</td>
               <td>
