@@ -5,9 +5,10 @@ export default function MRRTable() {
   const [tierFilter, setTierFilter] = useState('All')
 
   const tiers = ['gold', 'silver', 'bronze']
-  const visibleTiers = tierFilter === 'All'
-    ? tiers
-    : [tierFilter.toLowerCase()]
+  const selectedTier = tierFilter.toLowerCase()
+  const visibleTiers = tiers.includes(selectedTier)
+    ? [selectedTier]
+    : tiers
 
   return (
     <div className="card">
