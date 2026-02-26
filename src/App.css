@@ -341,6 +341,40 @@ td {
 .priority-medium { background: #fef3c7; color: #d97706; }
 .priority-low { background: #f0f2f5; color: #888; }
 
+/* ===== MRR Tabs ===== */
+.mrr-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 16px;
+  border-bottom: 2px solid #e8eaed;
+  padding-bottom: 0;
+}
+
+.mrr-tab {
+  padding: 8px 16px;
+  border: none;
+  background: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: #888;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.15s ease;
+  border-radius: 6px 6px 0 0;
+}
+
+.mrr-tab:hover {
+  color: #1a1a2e;
+  background: rgba(99, 102, 241, 0.04);
+}
+
+.mrr-tab-active {
+  color: #6366f1;
+  border-bottom-color: #6366f1;
+  background: rgba(99, 102, 241, 0.06);
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 1200px) {
   .grid-2col { grid-template-columns: 1fr; }
