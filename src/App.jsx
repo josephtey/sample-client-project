@@ -4,9 +4,11 @@ import StatsCards from './components/StatsCards'
 import MRRTable from './components/MRRTable'
 import ClientTable from './components/ClientTable'
 import FeatureRequests from './components/FeatureRequests'
+import DataTabs from './components/DataTabs'
 
 export default function App() {
   const [activePage, setActivePage] = useState('dashboard')
+  const [activeTab, setActiveTab] = useState('overview')
 
   return (
     <div className="app-layout">
@@ -22,10 +24,15 @@ export default function App() {
           {activePage === 'dashboard' && (
             <>
               <StatsCards />
-              <div className="grid-2col">
-                <MRRTable />
-                <ClientTable />
-              </div>
+              <DataTabs activeTab={activeTab} onTabChange={setActiveTab} />
+              {activeTab === 'overview' && (
+                <div className="grid-2col">
+                  <MRRTable />
+                  <ClientTable />
+                </div>
+              )}
+              {activeTab === 'revenue' && <MRRTable />}
+              {activeTab === 'clients' && <ClientTable />}
             </>
           )}
           {activePage === 'clients' && <ClientTable />}

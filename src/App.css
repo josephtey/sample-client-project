@@ -173,6 +173,39 @@ body {
 .stat-change.positive { color: #22c55e; }
 .stat-change.neutral { color: #888; }
 
+/* ===== Data Tabs ===== */
+.data-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e8eaed;
+  padding-bottom: 0;
+}
+
+.data-tab {
+  padding: 10px 20px;
+  border: none;
+  background: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #888;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.15s ease;
+  border-radius: 6px 6px 0 0;
+}
+
+.data-tab:hover {
+  color: #1a1a2e;
+  background: rgba(99, 102, 241, 0.04);
+}
+
+.data-tab.active {
+  color: #6366f1;
+  border-bottom-color: #6366f1;
+}
+
 /* ===== Grid ===== */
 .grid-2col {
   display: grid;
