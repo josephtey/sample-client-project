@@ -216,6 +216,53 @@ body {
   color: #666;
 }
 
+/* ===== Dropdown Filter ===== */
+.card-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dropdown-filter {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dropdown-filter-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dropdown-filter-select {
+  font-size: 13px;
+  font-weight: 500;
+  padding: 5px 28px 5px 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: #fafafa;
+  color: #1a1a2e;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23888'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  transition: border-color 0.15s ease;
+}
+
+.dropdown-filter-select:hover {
+  border-color: #6366f1;
+}
+
+.dropdown-filter-select:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.15);
+}
+
 /* ===== Badge ===== */
 .badge {
   font-size: 12px;
